@@ -2,13 +2,18 @@
  * File: messageplate.scss
  * Type: SASS import and execute file
  * Author: Chris Humboldt
- * Last Edited: 18 May 2015
+ * Last Edited: 19 May 2015
  */
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
 // Imports
+// Call styles
 
 // Imports
 // ---------------------------------------------------------------------------------------
 @import "import";
+
+// Call styles
+// ---------------------------------------------------------------------------------------
+@include messageplate-css();

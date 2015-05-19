@@ -1,19 +1,17 @@
 /**
- * File: _import.scss
- * Type: SASS import file
+ * File: _execute.scss
+ * Type: SASS execute file
  * Author: Chris Humboldt
- * Last Edited: 18 May 2015
+ * Last Edited: 19 May 2015
  */
 
 // Table of contents
 // ---------------------------------------------------------------------------------------
-// Imports
+// Messageplate CSS
 
-// Imports
+// Messageplate CSS
 // ---------------------------------------------------------------------------------------
-@import "../bower_components/blueplate/sass/import";
-
-@import "module/message";
-@import "module/overlay";
-
-@import "css/execute";
+@mixin messageplate-css() {
+	@include messageplate-message();
+	@include messageplate-overlay();
+}

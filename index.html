@@ -3,19 +3,19 @@
 <head>
 
 	<!-- Meta setup -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <!-- Title -->
-    <title>Messageplate</title>
+	<!-- Title -->
+	<title>Messageplate</title>
 
-    <!-- Include Messageplate -->
-    <script src="js/messageplate.js"></script>
-    <link href="css/messageplate.css" rel="stylesheet" type="text/css">
+	<!-- Include Messageplate -->
+	<script src="js/messageplate.js"></script>
+	<link href="css/messageplate.css" rel="stylesheet" type="text/css">
 
-    <!-- Demo -->
-    <link href="css/demo.css" rel="stylesheet" type="text/css">
-    
+	<!-- Demo -->
+	<link href="css/demo.css" rel="stylesheet" type="text/css">
+	
 </head>
 <body>
 
@@ -24,9 +24,31 @@
 		<h3>Message Example</h3>
 
 		<div class="block"><div class="confine">
+
+			<a href="#" id="success-message">Open Success Message</a><br><br>
+			<a href="#" id="error-message">Open Error Message</a>
+
 		</div></div>
 		
 	</div>
+
+	<script>
+	document.getElementById('success-message').onclick = function(event) {
+		event.preventDefault();
+		new Messageplate({ 
+			type: 'success',
+			message: 'This is a success message.'
+		});
+	};
+	document.getElementById('error-message').onclick = function(event) {
+		event.preventDefault();
+		new Messageplate({
+			type: 'error',
+			heading: 'There Was An Error',
+			message: 'This is a basic error message test.'
+		});
+	};
+	</script>
 
 </body>
 </html>
