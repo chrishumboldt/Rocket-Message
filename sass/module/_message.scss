@@ -14,7 +14,7 @@
 // ---------------------------------------------------------------------------------------
 $message-w: 290px;
 $message-w-small: 320px;
-$message-w-medium: 380px;
+$message-w-medium: 360px;
 $message-icon-s: 80px;
 $message-border-w: 4px;
 
@@ -211,7 +211,7 @@ $message-border-w: 4px;
 			}
 		}
 
-		// Heading
+		// Text
 		.message-heading h6 {
 			@include spacing-no();
 			@include margin-bottom($space-minor);
@@ -221,11 +221,14 @@ $message-border-w: 4px;
 		.message-text {
 			@include spacing-no();
 			@include text-colour($grey-blue-dark);
+			@include text-line-height(22px);
 			@include text-size($size-base);
 
 			p:last-child {
 				@include spacing-no();
 			}
 		}
+
+		// Buttons
 	}
 }

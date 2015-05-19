@@ -101,6 +101,7 @@ $messageBoxHTML += '<a class="message-close"></a>';
 $messageBoxHTML += '<div class="message-type"></div>';
 $messageBoxHTML += '<div class="message-heading"></div>';
 $messageBoxHTML += '<div class="message-text"></div>';
+$messageBoxHTML += '<div class="message-buttons"></div>';
 
 $messageBox.id = 'message-box';
 $messageBox.innerHTML = $messageBoxHTML;
@@ -109,16 +110,17 @@ $messageOverlay.id = 'message-overlay';
 // Component
 // ---------------------------------------------------------------------------------------
 function Messageplate($userOptions) {
-
 	// Setup
 	this.options = {
+		buttonFalse: false,
+		buttonTrue: false,
 		close: 'close',
 		heading: false,
 		message: false,
+		onTrue: false,
 		overlay: true,
 		type: false
 	};
-
 	// User options
 	if (typeof $userOptions === 'object') {
 		for (var $optionKey in $userOptions) {
@@ -127,7 +129,6 @@ function Messageplate($userOptions) {
 			}
 		}
 	}
-
 	this.setupMessageBox();
 	this.setupOverlay();
 };
@@ -135,11 +136,18 @@ function Messageplate($userOptions) {
 // Prototype component
 // ---------------------------------------------------------------------------------------
 Messageplate.prototype = {
-	removeMessageBox: function() {
-		tool.remove('#message-box');
+	messageClose: function() {
+		tool.classRemove(document.getElementsByTagName('html')[0], 'message-reveal');
+		setTimeout(function() {
+			tool.remove('#message-box');
+		}, 300);
+	},
+	messageShow: function() {
+
 	},
 	setupMessageBox: function() {
-		this.removeMessageBox();
+		var $self = this;
+		tool.remove('#message-box');
 		document.getElementsByTagName('body')[0].appendChild($messageBox);
 
 		var $messageBoxId = document.getElementById('message-box');
@@ -148,6 +156,33 @@ Messageplate.prototype = {
 		$messageBoxId.querySelector('.message-heading').innerHTML = this.options.heading !== false ? '<h6>' + this.options.heading + '</h6>' : '';
 		$messageBoxId.querySelector('.message-text').innerHTML = this.options.message !== false ? this.options.message : '';
 
+		var $buttonHTML = '';
+		if (this.options.buttonFalse !== false && this.options.buttonTrue !== false) {
+			$buttonHTML += '<div class="btn-col-2">';
+			$buttonHTML += '<div class="left"><button class="btn-true">' + this.options.buttonTrue + '</div>';
+			$buttonHTML += '<div class="right"><button class="btn-false">' + this.options.buttonFalse + '</div>';
+			$buttonHTML += '</div>';
+		} else if (this.options.buttonTrue) {
+			$buttonHTML += '<div class="btn-col-1">';
+			$buttonHTML += '<button class="btn-true">' + this.options.buttonTrue + '</button>';
+			$buttonHTML += '</div>';
+		} else if (this.options.buttonFalse) {
+			$buttonHTML += '<div class="btn-col-1">';
+			$buttonHTML += '<button class="btn-false">' + this.options.buttonFalse + '</button>';
+			$buttonHTML += '</div>';
+		}
+		$messageBoxId.querySelector('.message-buttons').innerHTML = $buttonHTML;
+		if (this.options.buttonFalse !== false) {
+			$messageBoxId.querySelector('.btn-false').onclick = function() {
+				$self.messageClose();
+			};
+		}
+		if (this.options.onTrue !== false) {
+			$messageBoxId.querySelector('.btn-true').onclick = function() {
+				$self.options.onTrue.call(window);
+			};
+		}
+
 		// Reveal
 		setTimeout(function() {
 			tool.classAdd(document.getElementsByTagName('html')[0], 'message-reveal');
@@ -155,14 +190,15 @@ Messageplate.prototype = {
 
 		// Hide
 		$messageBoxId.querySelector('.message-close').onclick = function() {
-			tool.classRemove(document.getElementsByTagName('html')[0], 'message-reveal');
+			$self.messageClose();
 		};
 	},
 	setupOverlay: function() {
+		var $self = this;
 		if ((this.options.overlay === true) && (document.getElementById('message-overlay') === null)) {
 			document.getElementsByTagName('body')[0].appendChild($messageOverlay);
 			document.getElementById('message-overlay').onclick = function() {
-				tool.classRemove(document.getElementsByTagName('html')[0], 'message-reveal');
+				$self.messageClose();
 			};
 		}
 	}

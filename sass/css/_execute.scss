@@ -14,4 +14,5 @@
 @mixin messageplate-css() {
 	@include messageplate-message();
 	@include messageplate-overlay();
+	@include messageplate-buttons()
 }

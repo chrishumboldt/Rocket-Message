@@ -2,7 +2,7 @@
  * File: _import.scss
  * Type: SASS import file
  * Author: Chris Humboldt
- * Last Edited: 18 May 2015
+ * Last Edited: 19 May 2015
  */
 
 // Table of contents
@@ -11,8 +11,10 @@
 
 // Imports
 // ---------------------------------------------------------------------------------------
+@import "../bower_components/buttonplate/sass/import";
 @import "../bower_components/blueplate/sass/import";
 
+@import "module/button";
 @import "module/message";
 @import "module/overlay";
 
