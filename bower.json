@@ -6,7 +6,7 @@
 		"Chris Humboldt <chrismodem@gmail.com>"
 	],
 	"description": "A basic message component.",
-	"main": "js/min/messageplate.min.js,css/messageplate.css",
+	"main": ["js/min/messageplate.min.js", "css/messageplate.css"],
 	"keywords": [
 		"Message",
 		"Popup",
