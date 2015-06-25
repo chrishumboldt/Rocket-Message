@@ -107,9 +107,6 @@ var messageplate = function($userOptions) {
 				return true;
 			}
 		};
-		var hasClass = function($element, $class) {
-			return (' ' + $element.className + ' ').indexOf(' ' + $class + ' ') > -1;
-		};
 		var isTouch = function() {
 			return 'ontouchstart' in window || 'onmsgesturechange' in window;
 		};
@@ -135,7 +132,6 @@ var messageplate = function($userOptions) {
 			classRemove: classRemove,
 			element: $toolEl,
 			exists: exists,
-			hasClass: hasClass,
 			html: $toolHtml,
 			isTouch: isTouch,
 			remove: remove
@@ -150,7 +146,7 @@ var messageplate = function($userOptions) {
 
 	// Internal functions
 	function basicSetup() {
-		if (!tool.isTouch() && !tool.hasClass(tool.element.html, 'message-no-touch')) {
+		if (!tool.isTouch()) {
 			tool.classAdd(tool.element.html, 'message-no-touch');
 		}
 		tool.remove('#message-box');
