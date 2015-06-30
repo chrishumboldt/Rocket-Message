@@ -67,11 +67,12 @@ var messageplate = function($userOptions) {
 		$buttonFalse.className = 'btn-col-1';
 		$buttonFalse.innerHTML = $buttonFalseHtml;
 
-		// Variables
+		// Elements
 		var $toolEl = {
 			body: document.getElementsByTagName('body')[0],
 			html: document.getElementsByTagName('html')[0]
 		};
+		// HTML
 		var $toolHtml = {
 			buttonFalse: $buttonFalse,
 			buttonsBoth: $buttonsBoth,
@@ -83,7 +84,7 @@ var messageplate = function($userOptions) {
 		// Functions
 		var classAdd = function($element, $class) {
 			var $crtClass = $element.className;
-			if ($crtClass.indexOf($class) === -1) {
+			if ($crtClass.match(new RegExp('\\b' + $class + '\\b', 'g')) === null) {
 				$element.className = $crtClass === '' ? $class : $crtClass + ' ' + $class;
 			}
 		};
