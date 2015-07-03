@@ -36,41 +36,41 @@
 
 	<script>
 	document.getElementById('success-message').onclick = function(event) {
-		event.preventDefault();
 		new messageplate({
 			type: 'success',
-			message: 'This is a success message.',
-			buttonFalse: 'Thanks Got It'
+			body: 'This is a success message.',
+			buttonFalse: 'Thanks Got It',
+			parseEvent: event
 		});
 	};
 	document.getElementById('error-message').onclick = function(event) {
-		event.preventDefault();
 		new messageplate({
 			type: 'error',
 			heading: 'There Was An Error',
-			message: 'This is a basic error message test and it rocks.'
+			body: 'This is a basic error message test and it rocks.',
+			parseEvent: event
 		});
 	};
 	document.getElementById('warning-message').onclick = function(event) {
-		event.preventDefault();
 		new messageplate({
 			type: 'warning',
-			message: 'This is a basic warning message so be warned.'
+			body: 'This is a basic warning message so be warned.',
+			parseEvent: event
 		});
 	};
 	document.getElementById('question-message').onclick = function(event) {
-		event.preventDefault();
 		var $question = new messageplate({
 			type: false,
-			message: 'Are you sure you opened a cool question message?',
+			body: 'Are you sure you opened a cool question message?',
 			buttonFalse: 'Nope',
 			buttonTrue: 'Yeah',
 			onTrue: function() {
 				messageClose();
-			}
+			},
+			parseEvent: event
 		});
 		function messageClose() {
-			$question.messageClose();
+			$question.close();
 			alert('Success');
 		}
 	};

@@ -1,8 +1,7 @@
 /**
  * File: _message.scss
- * Type: SASS module file
+ * Type: SASS module
  * Author: Chris Humboldt
- * Last Edited: 19 May 2015
  */
 
 // Table of contents
@@ -21,8 +20,8 @@ $message-border-w: 4px;
 // Message
 // ---------------------------------------------------------------------------------------
 @mixin messageplate-message() {
-	#message-box {
-		@include position(fixed, top 20% left 50%);
+	#messageplate {
+		@include position(fixed, top 14% left 50%);
 		@include width($message-w);
 		@include margin-left(-($message-w / 2));
 		@include padding($space-slight);
@@ -47,13 +46,13 @@ $message-border-w: 4px;
 		}
 
 		// Reveal
-		.message-reveal & {
+		.messageplate-reveal & {
 			@include opacity(1);
 			@include transform-scale-3d(1, 1);
 		}
 
 		// Close
-		.message-close {
+		.messageplate-close {
 			@include position(absolute, top 0px right 8px);
 			@include square(44px);
 			@include text-align(center);
@@ -61,14 +60,14 @@ $message-border-w: 4px;
 			@include text-size($size-minor);
 			@include animate(color);
 
-			.message-no-touch &:hover {
+			.messageplate-no-touch &:hover {
 				@include text-colour($grey-blue-dark);
 				@include cursor(pointer);
 			}
 		}
 
 		// Types
-		.message-type {
+		.messageplate-type {
 			@include position(relative);
 			@include display(block);
 			@include width(100%);
@@ -91,7 +90,7 @@ $message-border-w: 4px;
 				}
 
 				// Reveal
-				.message-reveal & {
+				.messageplate-reveal & {
 					@include opacity(1);
 				}
 			}
@@ -118,7 +117,7 @@ $message-border-w: 4px;
 					@include animate(all, 0.4s, 0.5s);
 				}
 				// Reveal
-				.message-reveal & {
+				.messageplate-reveal & {
 					.line-one {
 						@include opacity(1);
 					}
@@ -148,7 +147,7 @@ $message-border-w: 4px;
 					@include animate(all, 0.2s, 0.6s);
 				}
 				// Reveal
-				.message-reveal & {
+				.messageplate-reveal & {
 					.line-one {
 						@include height(30px);
 					}
@@ -190,7 +189,7 @@ $message-border-w: 4px;
 				}
 
 				// Reveal
-				.message-reveal & {
+				.messageplate-reveal & {
 					@include opacity(1);
 
 					.line-one {
@@ -212,13 +211,13 @@ $message-border-w: 4px;
 		}
 
 		// Text
-		.message-heading h6 {
+		.messageplate-heading h6 {
 			@include spacing-no();
 			@include margin-bottom($space-minor);
 			@include text-colour($grey-blue-x-dark);
 			@include text-size($size-slight);
 		}
-		.message-text {
+		.messageplate-body {
 			@include spacing-no();
 			@include text-colour($grey-blue-dark);
 			@include text-line-height(22px);
@@ -228,7 +227,5 @@ $message-border-w: 4px;
 				@include spacing-no();
 			}
 		}
-
-		// Buttons
 	}
 }

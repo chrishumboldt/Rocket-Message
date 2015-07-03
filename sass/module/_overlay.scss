@@ -1,8 +1,7 @@
 /**
  * File: _overlay.scss
- * Type: SASS module file
+ * Type: SASS module
  * Author: Chris Humboldt
- * Last Edited: 19 May 2015
  */
 
 // Table of contents
@@ -12,7 +11,7 @@
 // Overlay
 // ---------------------------------------------------------------------------------------
 @mixin messageplate-overlay() {
-	#message-overlay {
+	#web-overlay {
 		@include display(block);
 		@include position(fixed, top 0 right 0 bottom 0 left 0);
 		@include background-colour(fade-out($black-base, 0.4));
@@ -22,7 +21,7 @@
 		@include animate(all, 0.4s);
 
 		// Reveal
-		.message-reveal & {
+		.messageplate-reveal & {
 			@include visibility(visible);
 			@include opacity(1);
 		}
