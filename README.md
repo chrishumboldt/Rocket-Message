@@ -47,6 +47,7 @@ buttonTrue | false | | Set the button true text. A false value will not display 
 close | close | | Set the text or inner HTML of the close link.
 onTrue | false | | Assign a callback when the buttonTrue is selected.
 overlay | true | true, false | Set whether or not you want the overlay to display on message open.
+parseEvent | false | true, false | Parse the event of a click to prevent the default link behavior.
 
 ## Advanced Example
 See an advanced example below with options as per the above.
