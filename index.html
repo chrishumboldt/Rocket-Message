@@ -1,39 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 	<!-- Meta setup -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-
 	<!-- Title -->
 	<title>Messageplate</title>
-
-	<!-- Include Messageplate -->
-	<script src="js/messageplate.js"></script>
+	<!-- Styles -->
 	<link href="css/messageplate.css" rel="stylesheet" type="text/css">
-
-	<!-- Demo -->
 	<link href="css/demo.css" rel="stylesheet" type="text/css">
-	
 </head>
 <body>
 
+	<div class="heading">
+      <div class="container"><h2>Messageplate Component</h2></div>
+   </div>
 	<div class="container">
-
-		<h3>Message Example</h3>
-
-		<div class="block"><div class="confine">
-
-			<a href="#" id="success-message">Open Success Message</a><br><br>
-			<a href="#" id="error-message">Open Error Message</a><br><br>
-			<a href="#" id="warning-message">Open Warning Message</a><br><br>
-			<a href="#" id="question-message">Open Question Message</a>
-
-		</div></div>
-		
+		<h4>Getting Started</h4>
+		<p>You can either download a copy of the source files or install Messageplate via Bower.</p>
+<pre class="prettyprint linenums">
+bower install messageplate
+</pre>
+	<p>Start by including the necessary files.</p>
+<pre class="prettyprint linenums">
+&lt;head&gt;
+    &lt;link href=&quot;css/messageplate.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    /* Your content goes here */
+    &lt;script src=&quot;js/min/messageplate.js&quot;>&lt;/script&gt;
+&lt;/body&gt;
+</pre>
+		<br>
+		<h4>Basic Example</h4>
+		<p>Below is an example of executing the component complete with required HTML and Javascript.</p>
+<pre class="prettyprint linenums">
+&lt;a href id="example">Show Message&lt;/a&gt;
+&lt;script&gt;
+document.getElementById('example').onclick = function(event) {
+   new messageplate({
+      body: 'This is an example message.',
+      parseEvent: event
+   });
+};
+&lt;/script&gt;
+</pre>
+		<br>
+		<h4>Working Example</h4>
+		<a href id="success-message" class="link">Open Success Message</a><br><br>
+		<a href id="error-message" class="link">Open Error Message</a><br><br>
+		<a href id="warning-message" class="link">Open Warning Message</a><br><br>
+		<a href id="question-message" class="link">Open Question Message</a>
+		<br><br>
+      <h4>Detailed Documentation</h4>
+      <p>For a more detailed look into the available options, you can read the documentation at <a target="_blank" href="https://github.com/chrishumboldt/Messageplate" class="link">https://github.com/chrishumboldt/Messageplate</a></p>
 	</div>
 
+	<footer><div class="container"><div class="col-double">
+
+		<div class="left">
+			Made by <a href="http://chrishumboldt.com" target="_blank">Chris Humboldt</a>
+		</div>
+
+		<div class="right">
+			A <a href="http://getwebplate.com" target="_blank">Webplate Project</a>&nbsp;&nbsp;
+			Want updates? <a href="http://twitter.com/webplatetweets" target="_blank">@webplatetweets</a>
+		</div>
+
+	</div></div></footer>
+
+	<!-- Scripts -->
+	<script src="js/messageplate.js"></script>
+   <script src="js/min/demo.js"></script>
 	<script>
 	document.getElementById('success-message').onclick = function(event) {
 		new messageplate({
