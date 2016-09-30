@@ -12,10 +12,10 @@ Start by including the necessary files.
 
 ```
 <head>
-   <link href="css/messageplate.css" rel="stylesheet" type="text/css">
+   <link href="css/messageplate.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-   <script src="js/min/messageplate.js"></script>
+   <script src="js/messageplate.min.js"></script>
 </body>
 ```
 
@@ -78,7 +78,7 @@ Twitter: <a href="https://twitter.com/chrishumboldt">twitter.com/chrishumboldt</
 GitHub <a href="https://github.com/chrishumboldt">github.com/chrishumboldt</a><br>
 
 ## Copyright and License
-Copyright 2015 Webplate Project
+Copyright 2016 Webplate Project
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

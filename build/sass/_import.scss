@@ -2,9 +2,9 @@
  * File: sass/_import.scss
  * Type: SASS import
  * Author: Chris Humboldt
- */
+**/
 
-@import "../bower_components/blueplate/sass/import";
+@import "../../bower_components/blueplate/build/sass/import";
 
 @import "component/button";
 @import "component/message";
