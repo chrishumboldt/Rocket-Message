@@ -1,12 +1,10 @@
 /**
- * File: sass/component/_overlay.scss
- * Type: SASS component
  * Author: Chris Humboldt
- */
+**/
 
 // Overlay
-@mixin messageplate-overlay() {
-	#web-overlay {
+@mixin message-overlay {
+	#rocket-overlay {
 		@include display(block);
 		@include position(fixed, top 0 right 0 bottom 0 left 0);
 		@include background-colour(fade-out($black-base, 0.4));
@@ -16,7 +14,7 @@
 		@include animate(all, 0.4s);
 
 		// Reveal
-		.mp-reveal & {
+		.rm-reveal & {
 			@include visibility(visible);
 			@include opacity(1);
 		}

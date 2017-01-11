@@ -1,0 +1,11 @@
+{
+   "build": [{
+      "name": "message",
+      "css": [
+         "message.scss"
+      ],
+      "js": [
+         "message.js"
+      ]
+   }]
+}

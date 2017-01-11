@@ -1,0 +1,31 @@
+{
+  "name": "rocket-message",
+  "version": "1.0.0",
+  "description": "A message module.",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrishumboldt/Messageplate.git"
+  },
+  "keywords": [
+    "Rocket",
+    "Part",
+    "Module",
+    "Message",
+    "Javascript",
+    "CSS"
+  ],
+  "author": "Chris Humboldt",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/chrishumboldt/Messageplate/issues"
+  },
+  "homepage": "https://github.com/chrishumboldt/Messageplate#readme",
+  "dependencies": {
+    "rocket-propel": "^3.0.3",
+    "rocket-tools": "^1.9.0"
+  },
+  "devDependencies": {
+    "rocket-demo": "^2.0.1"
+  }
+}

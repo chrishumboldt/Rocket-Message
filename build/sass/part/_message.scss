@@ -1,8 +1,6 @@
 /**
- * File: sass/component/_message.scss
- * Type: SASS component
  * Author: Chris Humboldt
- */
+**/
 
 // Variables
 $message-w: 290px;
@@ -13,8 +11,8 @@ $message-border-w: 4px;
 $green-dark: darken($green, 6%);
 
 // Message
-@mixin messageplate-message() {
-	#messageplate {
+@mixin message-body {
+	#rocket-message {
 		@include position(fixed, top 14% left 50%);
 		@include width($message-w);
 		@include margin-left(-($message-w / 2));
@@ -38,13 +36,13 @@ $green-dark: darken($green, 6%);
 		}
 
 		// Reveal
-		.mp-reveal & {
+		.rm-reveal & {
 			@include opacity(1);
 			@include transform-scale-3d(1, 1);
 		}
 
 		// Close
-		.mp-close {
+		.rm-close {
 			@include position(absolute, top 0px right 8px);
 			@include square(44px);
 			@include text-align(center);
@@ -52,14 +50,14 @@ $green-dark: darken($green, 6%);
 			@include text-size($size-minor);
 			@include animate(color);
 
-			.mp-no-touch &:hover {
+			.rocket-no-touch &:hover {
 				@include text-colour($grey-blue-dark);
 				@include cursor(pointer);
 			}
 		}
 
 		// Types
-		.mp-type {
+		.rm-type {
 			@include position(relative);
 			@include display(block);
 			@include width(100%);
@@ -82,7 +80,7 @@ $green-dark: darken($green, 6%);
 				}
 
 				// Reveal
-				.mp-reveal & {
+				.rm-reveal & {
 					@include opacity(1);
 				}
 			}
@@ -107,7 +105,7 @@ $green-dark: darken($green, 6%);
 				@include opacity(0);
 				@include animate(all, 0.4s, 0.5s);
 			}
-			.mp-reveal & {
+			.rm-reveal & {
 				.l-1 {
 					@include opacity(1);
 				}
@@ -135,7 +133,7 @@ $green-dark: darken($green, 6%);
 				@include opacity(0);
 				@include animate(all, 0.2s, 0.6s);
 			}
-			.mp-reveal & {
+			.rm-reveal & {
 				.l-1 {
 					@include height(30px);
 				}
@@ -172,7 +170,7 @@ $green-dark: darken($green, 6%);
 				transform: rotate(-225deg) scale(0);
 				@include animate(all, 0.2s, 0.5s);
 			}
-			.mp-reveal & {
+			.rm-reveal & {
 				@include opacity(1);
 				.l-1 {
 					-webkit-transform: rotate(225deg) scale(1);
@@ -190,13 +188,13 @@ $green-dark: darken($green, 6%);
 				}
 			}
 		}
-		.mp-heading h6 {
+		.rm-heading h6 {
 			@include spacing-no();
 			@include margin-bottom($space-minor);
 			@include text-colour($grey-blue-x-dark);
 			@include text-size($size-slight);
 		}
-		.mp-body {
+		.rm-body {
 			@include spacing-no();
 			@include text-colour($grey-blue-dark);
 			@include text-line-height(22px);
