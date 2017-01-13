@@ -28,8 +28,9 @@
    			@include background-colour(transparent);
    			@include border($grey-blue, 1px);
    			@include border-radius();
-   			outline: none;
-   			-webkit-appearance: none;
+            @include animate(all);
+         	outline: none;
+         	-webkit-appearance: none;
    			&:visited {
    				@include text-colour($grey-blue);
    			}
@@ -40,30 +41,19 @@
    			}
    			&:active,
    			&:active:hover {
-   				@include drop-shadow-inset(fade-out(#000, 0.85), 5px, 2px, 0px);
-   				text-shadow: fade-out($white, 0.75) 0px 1px 0;
-   				@include text-colour(darken($grey-blue, 25%));
-   				@include background-colour(darken($grey-blue, 5%));
+   				@include transform-scale-3d(0.9, 0.9, 0.9);
    			}
-   			-webkit-transition: border 0.2s ease-out, background 0.2s ease-out;
-   			-moz-transition: border 0.2s ease-out, background 0.2s ease-out;
-   			-ms-transition: border 0.2s ease-out, background 0.2s ease-out;
-   			-o-transition: border 0.2s ease-out, background 0.2s ease-out;
-   			transition: border 0.2s ease-out, background 0.2s ease-out;
+
    		}
    		.btn-true {
-   			@include text-colour($blue);
-   			@include border($blue, 1px);
+   			@include text-colour($white);
+            @include border-no;
+            @include background-colour($blue);
    			&:visited {
    				@include text-colour($white);
    			}
    			.rocket-no-touch &:hover {
    				@include background-colour($blue);
-   			}
-   			&:active,
-   			&:active:hover {
-   				@include text-colour(darken($blue, 25%));
-   				@include background-colour(darken($blue, 5%));
    			}
    		}
    	}

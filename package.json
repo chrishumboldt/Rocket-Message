@@ -23,7 +23,7 @@
   "homepage": "https://github.com/chrishumboldt/Messageplate#readme",
   "dependencies": {
     "rocket-propel": "^3.0.3",
-    "rocket-tools": "^1.9.0"
+    "rocket-tools": "^1.11.0"
   },
   "devDependencies": {
     "rocket-demo": "^2.0.1"
