@@ -34,16 +34,37 @@ npm install rocket-message
          <p>Start by including the necessary files.</p>
 <pre class="prettyprint linenums">
 &lt;head&gt;
-   &lt;link href="rocket-message/css/message.min.css" rel="stylesheet" type="text/css"&gt;
+   &lt;link href="node_modules/rocket-message/css/message.min.css" rel="stylesheet" type="text/css"&gt;
 &lt;/head&gt;
 &lt;body&gt;
    /* Your content goes here */
-   &lt;script src="rocket-tools/js/tools.min.js"&gt;&lt;/script&gt;
-   &lt;script src="rocket-message/js/message.min.js"&gt;&lt;/script&gt;
+   &lt;script src="node_modules/rocket-tools/js/tools.min.js"&gt;&lt;/script&gt;
+   &lt;script src="node_modules/rocket-message/js/message.min.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
+</pre>
+         <br>
+         <h4>Basic Example</h4>
+         <p>Initialise the message by executing the following Javascript.</p>
+<pre class="prettyprint linenums">
+&lt;button id="open-message"&gt;Open Message&lt;/button&gt;
+&lt;script&gt;
+   document.getElementById('open-message').onclick = function () {
+      var message = Rocket.message({
+         heading: 'Heading Here',
+         body: 'This is just a test.',
+         buttons: 'both',
+         onTrue: function () {
+            message.close();
+         }
+      });
+   };
+&lt;/script&gt;
 </pre>
 	      <br>
          <button id="open-message">Open Message</button>
+         <br><br>
+	      <h4>Detailed Documentation</h4>
+	      <p>For a more detailed look into the available options, you can read the documentation at <a target="_blank" href="https://github.com/chrishumboldt/Rocket-Message" class="link">https://github.com/chrishumboldt/Rocket-Message</a></p>
       </div>
 
       <!-- Footer -->
@@ -62,11 +83,17 @@ npm install rocket-message
    <!-- Scripts -->
    <script src="node_modules/rocket-tools/js/tools.min.js"></script>
    <script src="node_modules/rocket-demo/js/demo.min.js"></script>
-   <script src="build/js/message.js"></script>
+   <script src="js/message.min.js"></script>
    <script>
-      Rocket.message({
-         heading: 'Heading Here',
-         body: 'This is just a test.'
+      Rocket.event.add(Rocket.dom.select('#open-message')[0], 'click', function () {
+         var message = Rocket.message({
+            heading: 'Heading Here',
+            body: 'This is just a test.',
+            buttons: 'both',
+            onTrue: function () {
+               message.close();
+            }
+         });
       });
    </script>
 

@@ -27,6 +27,11 @@ module RockMod_Message {
       Rocket.dom.remove('#rocket-message');
       Rocket.dom.body.appendChild(html.popup(options));
       revealMessage(options.overlay, options.style);
+
+      return {
+         message: Rocket.dom.select('#rocket-message')[0],
+         close: closeMessage
+      };
    }
 
    function createToast(options) {
