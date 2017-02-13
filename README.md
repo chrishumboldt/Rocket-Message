@@ -89,7 +89,7 @@ You can set the defaults for `buttons`, `buttonFalse`, `buttonTrue`, `close` and
 ## Advanced Example
 See an advanced example below with options as per the above.
 
-```
+```html
 <a href id="example">Show Message</a>
 
 <script>
