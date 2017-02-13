@@ -97,7 +97,7 @@ document.getElementById('example').onclick = function(event) {
    var message = Rocket.message({
       type: 'warning',
       heading: 'Test Message'
-      body: 'Are you testing this component?',
+      body: 'Are you testing this module?',
       buttons: 'both',
       buttonTrue: 'Yes',
       buttonFalse: 'No',
