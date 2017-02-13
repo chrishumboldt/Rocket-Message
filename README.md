@@ -22,12 +22,12 @@ Start by including the necessary files.
 
 ```html
 <head>
-	<link href="node_modules/rocket-flicker/css/message.min.css" rel="stylesheet" type="text/css">
+	<link href="node_modules/rocket-message/css/message.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	/* Your content goes here */
    <script src="node_modules/rocket-tools/js/tools.min.js"></script>
-	<script src="node_modules/rocket-flicker/js/message.min.js"></script>
+	<script src="node_modules/rocket-message/js/message.min.js"></script>
 </body>
 ```
 
@@ -67,6 +67,7 @@ Name | Default | Options | Description
 For now the only post initialization method available is the close method used to manually close a message.
 
 ```javascript
+// Initialise a message
 var message = Rocket.message({
    body: 'This is a test.'
 });
@@ -90,6 +91,7 @@ See an advanced example below with options as per the above.
 
 ```
 <a href id="example">Show Message</a>
+
 <script>
 document.getElementById('example').onclick = function(event) {
    var message = Rocket.message({
