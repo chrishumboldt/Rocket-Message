@@ -1,0 +1,73 @@
+/**
+ * Author: Chris Humboldt
+**/
+
+@mixin message-buttons {
+   #rocket-message {
+   	.btn-col-1,
+   	.btn-col-2 {
+   		@include row();
+   		@include margin-top($space-minor);
+
+   		@include breakpoint(large) {
+   			@include margin-top($space-base);
+   		}
+
+   		.btn-false,
+   		.btn-true {
+   			@include position(relative);
+   			@include display(inline-block);
+   			@include padding-no();
+   			@include size(100%, 44px);
+   			@include text-align(center);
+   			@include text-colour($grey-blue);
+   			@include text-decoration(none);
+   			@include text-line-height(44px);
+   			@include text-size(14px);
+   			@include vertical-align(middle);
+   			@include background-colour(transparent);
+   			@include border($grey-blue, 1px);
+   			@include border-radius();
+            @include animate(all);
+         	outline: none;
+         	-webkit-appearance: none;
+   			&:visited {
+   				@include text-colour($grey-blue);
+   			}
+   			.rocket-no-touch &:hover {
+   				@include cursor(pointer);
+   				@include text-colour($white);
+   				@include background-colour($grey-blue);
+   			}
+   			&:active,
+   			&:active:hover {
+   				@include transform-scale-3d(0.9, 0.9, 0.9);
+   			}
+
+   		}
+   		.btn-true {
+   			@include text-colour($white);
+            @include border-no;
+            @include background-colour($blue);
+   			&:visited {
+   				@include text-colour($white);
+   			}
+   			.rocket-no-touch &:hover {
+   				@include background-colour($blue);
+   			}
+   		}
+   	}
+   	.btn-col-2 {
+   		> .left,
+   		> .right {
+   			@include span(6);
+   		}
+   		> .left {
+   			@include padding-right(4px);
+   		}
+   		> .right {
+   			@include padding-left(4px);
+   		}
+   	}
+   }
+}
