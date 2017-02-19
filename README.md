@@ -53,10 +53,10 @@ See the different options you have available on module call as well as the metho
 #### Options
 Name | Default | Options | Description
 ---- | ---- | ---- | ----
-`type` | `false` | `error`, `false`, `success`, `warning` | **NOTE** that the false value is equivalent to no type.
+`type` | `false` | `error` `false` `success` `warning` | **NOTE** that the false value is equivalent to no type.
 `heading` | | | You can make the heading whatever you would like. An empty value will not display the heading.
 `body` | | | You can make the body whatever you would like. An empty value will not display the body.
-`buttons` | `none` | `true` `false`, `both`, `none` | Display the various buttons on the message.
+`buttons` | `none` | `true` `false` `both` `none` | Display the various buttons on the message.
 `buttonFalse` | `Cancel` | | Set the button false text. A false value will not display this button.
 `buttonTrue` | `Ok` | | Set the button true text. A false value will not display this button.
 `close` | `close` | | Set the text or inner HTML of the close link.
