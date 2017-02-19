@@ -34,8 +34,9 @@ Start by including the necessary files.
 ## Basic Example
 See the setup of the HTML and Javascript call below.
 
-```javascript
+```html
 <a href id="example">Show Message</a>
+
 <script>
 document.getElementById('example').onclick = function(event) {
    Rocket.message({
