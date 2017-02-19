@@ -1,6 +1,6 @@
 {
   "name": "rocket-message",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A message module.",
   "main": "index.html",
   "repository": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/chrishumboldt/Messageplate#readme",
   "dependencies": {
-    "rocket-tools": "^1.11.3"
+    "rocket-tools": "^1.12.6"
   },
   "devDependencies": {
     "rocket-demo": "^2.0.1",

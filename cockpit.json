@@ -2,10 +2,10 @@
    "build": [{
       "name": "message",
       "css": [
-         "message.scss"
+         "~/message.scss"
       ],
       "js": [
-         "message.js"
+         "~/message.js"
       ]
    }]
 }
