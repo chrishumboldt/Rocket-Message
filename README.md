@@ -22,12 +22,12 @@ Start by including the necessary files.
 
 ```html
 <head>
-	<link href="node_modules/rocket-message/css/message.min.css" rel="stylesheet" type="text/css">
+   <link href="node_modules/rocket-message/css/message.min.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	/* Your content goes here */
+   /* Your content goes here */
    <script src="node_modules/rocket-tools/js/tools.min.js"></script>
-	<script src="node_modules/rocket-message/js/message.min.js"></script>
+   <script src="node_modules/rocket-message/js/message.min.js"></script>
 </body>
 ```
 
