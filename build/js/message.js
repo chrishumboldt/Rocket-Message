@@ -10,8 +10,12 @@ var RockMod_Message;
 (function (RockMod_Message) {
     var types = ['error', 'success', 'warning'];
     function closeMessage() {
-        Rocket.overlay.hide();
-        Rocket.classes.remove(Rocket.dom.html, 'rm-reveal');
+        if (!Rocket.has.class(Rocket.dom.html, 'rmo-reveal')) {
+            Rocket.overlay.hide();
+        }
+        setTimeout(function () {
+            Rocket.classes.remove(Rocket.dom.html, 'rm-reveal');
+        }, 50);
     }
     function createPopup(options) {
         Rocket.dom.remove('#rocket-message');
@@ -107,8 +111,8 @@ var RockMod_Message;
         Rocket.event.add(Rocket.dom.select('#rocket-overlay')[0], 'click', closeMessage);
     }
     function init(uOptions) {
-        if (typeof uOptions !== 'object') {
-            return false;
+        if (!Rocket.is.object(uOptions)) {
+            return;
         }
         var options = {
             buttons: Rocket.helper.setDefault(uOptions.buttons, Rocket.defaults.message.buttons),

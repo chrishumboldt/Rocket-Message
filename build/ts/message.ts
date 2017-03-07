@@ -1,6 +1,6 @@
-/**
- * Author: Chris Humboldt
-**/
+/*
+Author: Chris Humboldt
+*/
 
 // Extend Rocket
 Rocket.defaults.message = {
@@ -19,8 +19,17 @@ module RockMod_Message {
 
    // Functions
    function closeMessage() {
-      Rocket.overlay.hide();
-      Rocket.classes.remove(Rocket.dom.html, 'rm-reveal');
+      /*
+      Catch and make sure a Rocket modal is not open. This is to prevent
+      the two modules from conflicting with each other.
+      */
+      if (!Rocket.has.class(Rocket.dom.html, 'rmo-reveal')) {
+         Rocket.overlay.hide();
+      }
+
+      setTimeout(() => {
+         Rocket.classes.remove(Rocket.dom.html, 'rm-reveal');
+      }, 50);
    }
 
    function createPopup(options) {
@@ -142,10 +151,8 @@ module RockMod_Message {
 
    // Initialiser
    export function init(uOptions: any) {
-      // Catch
-      if (typeof uOptions !== 'object') {
-         return false;
-      }
+      if (!Rocket.is.object(uOptions)) { return; }
+
       // Continue
       let options: any = {
          buttons: Rocket.helper.setDefault(uOptions.buttons, Rocket.defaults.message.buttons),
