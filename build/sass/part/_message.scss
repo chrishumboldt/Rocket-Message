@@ -21,7 +21,7 @@ $green-dark: darken($green, 6%);
 		@include background-colour($white);
 		@include drop-shadow(fade-out($black, 0.95), 6px, 1px);
 		@include border-radius();
-		@include level(1001);
+		@include level(1100);
 		@include opacity(0);
 		@include transform-scale-3d(0, 0);
 		@include animate(all, 0.2s);
