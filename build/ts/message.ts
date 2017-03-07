@@ -149,7 +149,7 @@ module RockMod_Message {
 
    // Initialiser
    export function init(uOptions: any) {
-      if (Rocket.is.object(uOptions)) { return; }
+      if (!Rocket.is.object(uOptions)) { return; }
 
       // Continue
       let options: any = {

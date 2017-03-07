@@ -109,7 +109,7 @@ var RockMod_Message;
         Rocket.event.add(Rocket.dom.select('#rocket-overlay')[0], 'click', closeMessage);
     }
     function init(uOptions) {
-        if (Rocket.is.object(uOptions)) {
+        if (!Rocket.is.object(uOptions)) {
             return;
         }
         var options = {
