@@ -13,7 +13,9 @@ var RockMod_Message;
         if (!Rocket.has.class(Rocket.dom.html, 'rmo-reveal')) {
             Rocket.overlay.hide();
         }
-        Rocket.classes.remove(Rocket.dom.html, 'rm-reveal');
+        setTimeout(function () {
+            Rocket.classes.remove(Rocket.dom.html, 'rm-reveal');
+        }, 50);
     }
     function createPopup(options) {
         Rocket.dom.remove('#rocket-message');

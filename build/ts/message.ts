@@ -27,7 +27,9 @@ module RockMod_Message {
          Rocket.overlay.hide();
       }
 
-      Rocket.classes.remove(Rocket.dom.html, 'rm-reveal');
+      setTimeout(() => {
+         Rocket.classes.remove(Rocket.dom.html, 'rm-reveal');
+      }, 50);
    }
 
    function createPopup(options) {
