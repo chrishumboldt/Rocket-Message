@@ -86,7 +86,7 @@ npm install rocket-message
    <script src="node_modules/rocket-demo/js/demo.min.js"></script>
    <script src="js/message.min.js"></script>
    <script>
-      Rocket.event.add(Rocket.dom.select('#open-message')[0], 'click', function () {
+      Rocket.event.add(Rocket.dom.element('#open-message'), 'click', function () {
          var message = Rocket.message({
             heading: 'Heading Here',
             body: 'This is just a test.',
