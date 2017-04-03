@@ -117,7 +117,7 @@ module RockMod_Message {
             if (addBtnFalse) {
                let buttonFalseContainer = html.element('div', 'left', '');
                let buttonFalse = html.element('button', 'btn-false', options.buttonFalse);
-               Rocket.event.add(buttonFalse, 'click', closeMessage);
+               Rocket.event.add(buttonFalse, 'click', options.onFalse);
                buttonFalseContainer.appendChild(buttonFalse);
                buttonContainer.appendChild(buttonFalseContainer);
             }
@@ -161,6 +161,7 @@ module RockMod_Message {
          close: Rocket.helper.setDefault(uOptions.close, Rocket.defaults.message.close),
          heading: Rocket.helper.setDefault(uOptions.heading, ''),
          body: Rocket.helper.setDefault(uOptions.body, ''),
+         onFalse: Rocket.helper.setDefault(uOptions.onFalse, closeMessage),
          onTrue: Rocket.helper.setDefault(uOptions.onTrue, closeMessage),
          overlay: Rocket.helper.setDefault(uOptions.overlay, Rocket.defaults.message.overlay),
          type: Rocket.helper.setDefault(uOptions.type, 'none'),
