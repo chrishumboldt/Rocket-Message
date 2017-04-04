@@ -60,8 +60,8 @@ Name | Default | Options | Description
 `buttonFalse` | `Cancel` | | Set the button false text. A false value will not display this button.
 `buttonTrue` | `Ok` | | Set the button true text. A false value will not display this button.
 `close` | `close` | | Set the text or inner HTML of the close link.
-`onFalse` | `false` | | Assign a callback when the buttonFalse is clicked.
-`onTrue` | `false` | | Assign a callback when the buttonTrue is clicked.
+`onFalse` | | | Assign a callback when the buttonFalse is clicked.
+`onTrue` | | | Assign a callback when the buttonTrue is clicked.
 `overlay` | `true` | `true` `false` | Set whether or not you want the overlay to display on message open.
 `parseEvent` | | | Parse the event of a click to prevent the default link behavior.
 
