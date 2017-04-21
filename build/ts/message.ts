@@ -1,6 +1,6 @@
-/*
-Author: Chris Humboldt
-*/
+/**
+@author Iqela
+**/
 
 // Extend Rocket
 Rocket.defaults.message = {
@@ -116,14 +116,14 @@ module RockMod_Message {
 
             if (addBtnFalse) {
                let buttonFalseContainer = html.element('div', 'left', '');
-               let buttonFalse = html.element('button', 'btn-false', options.buttonFalse);
+               let buttonFalse = html.element('button', 'button _false', options.buttonFalse);
                Rocket.event.add(buttonFalse, 'click', options.onFalse);
                buttonFalseContainer.appendChild(buttonFalse);
                buttonContainer.appendChild(buttonFalseContainer);
             }
             if (addBtnTrue) {
                let buttonTrueContainer = html.element('div', 'right', '');
-               let buttonTrue = html.element('button', 'btn-true', options.buttonTrue);
+               let buttonTrue = html.element('button', 'button _true', options.buttonTrue);
                Rocket.event.add(buttonTrue, 'click', options.onTrue);
                buttonTrueContainer.appendChild(buttonTrue);
                buttonContainer.appendChild(buttonTrueContainer);
