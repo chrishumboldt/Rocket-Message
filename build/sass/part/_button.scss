@@ -13,8 +13,7 @@
    			@include margin-top($space-base);
    		}
 
-   		.btn-false,
-   		.btn-true {
+   		.button {
    			@include position(relative);
    			@include display(inline-block);
    			@include padding-no();
@@ -45,7 +44,7 @@
    			}
 
    		}
-   		.btn-true {
+   		._true {
    			@include text-colour($white);
             @include border-no;
             @include background-colour($blue);

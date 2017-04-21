@@ -1,3 +1,7 @@
+/**
+@author Iqela
+**/
+// Extend Rocket
 Rocket.defaults.message = {
     buttons: 'none',
     buttonFalse: 'Cancel',
@@ -6,10 +10,17 @@ Rocket.defaults.message = {
     overlay: true,
     style: 'popup'
 };
+// Module
 var RockMod_Message;
 (function (RockMod_Message) {
+    // Variables
     var types = ['error', 'success', 'warning'];
+    // Functions
     function closeMessage() {
+        /*
+        Catch and make sure a Rocket modal is not open. This is to prevent
+        the two modules from conflicting with each other.
+        */
         if (!Rocket.has.class(Rocket.dom.html, 'rmo-reveal')) {
             Rocket.overlay.hide();
         }
@@ -27,13 +38,15 @@ var RockMod_Message;
         };
     }
     function createToast(options) {
-        return false;
+        return false; // Code goes here.
     }
     var html = {
         element: function (type, classes, content) {
+            // Catch
             if (!Rocket.is.string(type)) {
                 return false;
             }
+            // Continue
             var html = document.createElement(type);
             if (Rocket.is.string(classes)) {
                 html.className = classes;
@@ -53,12 +66,15 @@ var RockMod_Message;
         popup: function (options) {
             var addBtnTrue = (options.buttons === 'both' || options.buttons === 'true') ? true : false;
             var addBtnFalse = (options.buttons === 'both' || options.buttons === 'false') ? true : false;
+            // Container
             var message = html.message.container();
+            // Close
             if (Rocket.is.string(options.close) && options.close.length > 0) {
                 var messageClose = html.element('a', 'rm-close', options.close);
                 Rocket.event.add(messageClose, 'click', closeMessage);
                 message.appendChild(messageClose);
             }
+            // Type
             if (Rocket.is.string(options.type) && options.type !== 'none' && types.indexOf(options.type) > -1) {
                 var messageType = html.element('div', 'rm-type', '');
                 var messageTypeInner = html.element('div', 't-' + options.type, '');
@@ -69,27 +85,30 @@ var RockMod_Message;
                 messageType.appendChild(messageTypeInner);
                 message.appendChild(messageType);
             }
+            // Heading
             if (Rocket.is.string(options.heading) && options.heading.length > 0) {
                 var messageHeading = html.element('div', 'rm-heading', '');
                 var headingH6 = html.element('h6', '', options.heading);
                 messageHeading.appendChild(headingH6);
                 message.appendChild(messageHeading);
             }
+            // Body
             if (Rocket.is.string(options.body) && options.body.length > 0) {
                 message.appendChild(html.element('div', 'rm-body', options.body));
             }
+            // Buttons
             if (addBtnTrue || addBtnFalse) {
                 var buttonContainer = html.element('div', (addBtnTrue && addBtnFalse) ? 'btn-col-2' : 'btn-col-1', '');
                 if (addBtnFalse) {
                     var buttonFalseContainer = html.element('div', 'left', '');
-                    var buttonFalse = html.element('button', 'btn-false', options.buttonFalse);
+                    var buttonFalse = html.element('button', 'button _false', options.buttonFalse);
                     Rocket.event.add(buttonFalse, 'click', options.onFalse);
                     buttonFalseContainer.appendChild(buttonFalse);
                     buttonContainer.appendChild(buttonFalseContainer);
                 }
                 if (addBtnTrue) {
                     var buttonTrueContainer = html.element('div', 'right', '');
-                    var buttonTrue = html.element('button', 'btn-true', options.buttonTrue);
+                    var buttonTrue = html.element('button', 'button _true', options.buttonTrue);
                     Rocket.event.add(buttonTrue, 'click', options.onTrue);
                     buttonTrueContainer.appendChild(buttonTrue);
                     buttonContainer.appendChild(buttonTrueContainer);
@@ -110,10 +129,12 @@ var RockMod_Message;
     function setup() {
         Rocket.event.add(Rocket.dom.select('#rocket-overlay')[0], 'click', closeMessage);
     }
+    // Initialiser
     function init(uOptions) {
         if (!Rocket.is.object(uOptions)) {
             return;
         }
+        // Continue
         var options = {
             buttons: Rocket.helper.setDefault(uOptions.buttons, Rocket.defaults.message.buttons),
             buttonFalse: Rocket.helper.setDefault(uOptions.buttonFalse, Rocket.defaults.message.buttonFalse),
@@ -130,9 +151,11 @@ var RockMod_Message;
         if (Rocket.is.function(uOptions.onDone)) {
             options.onDone = uOptions.onDone;
         }
+        // Cancel default event behavious
         if (Rocket.exists(uOptions.parseEvent)) {
             uOptions.parseEvent.preventDefault();
         }
+        // Return new message instance
         switch (options.style) {
             case 'popup':
                 return createPopup(options);
@@ -145,4 +168,5 @@ var RockMod_Message;
     RockMod_Message.init = init;
     setup();
 })(RockMod_Message || (RockMod_Message = {}));
+// Bind to Rocket
 Rocket.message = RockMod_Message.init;
