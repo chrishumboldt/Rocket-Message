@@ -68,11 +68,13 @@ var RockMod_Message;
             var addBtnFalse = (options.buttons === 'both' || options.buttons === 'false') ? true : false;
             // Container
             var message = html.message.container();
+            // Inner
+            var messageInner = html.element('div', 'rm-inner', '');
             // Close
             if (Rocket.is.string(options.close) && options.close.length > 0) {
                 var messageClose = html.element('a', 'rm-close', options.close);
                 Rocket.event.add(messageClose, 'click', closeMessage);
-                message.appendChild(messageClose);
+                messageInner.appendChild(messageClose);
             }
             // Type
             if (Rocket.is.string(options.type) && options.type !== 'none' && types.indexOf(options.type) > -1) {
@@ -83,18 +85,18 @@ var RockMod_Message;
                 messageTypeInner.appendChild(messageTypeLine1);
                 messageTypeInner.appendChild(messageTypeLine2);
                 messageType.appendChild(messageTypeInner);
-                message.appendChild(messageType);
+                messageInner.appendChild(messageType);
             }
             // Heading
             if (Rocket.is.string(options.heading) && options.heading.length > 0) {
                 var messageHeading = html.element('div', 'rm-heading', '');
                 var headingH6 = html.element('h6', '', options.heading);
                 messageHeading.appendChild(headingH6);
-                message.appendChild(messageHeading);
+                messageInner.appendChild(messageHeading);
             }
             // Body
             if (Rocket.is.string(options.body) && options.body.length > 0) {
-                message.appendChild(html.element('div', 'rm-body', options.body));
+                messageInner.appendChild(html.element('div', 'rm-body', options.body));
             }
             // Buttons
             if (addBtnTrue || addBtnFalse) {
@@ -113,8 +115,9 @@ var RockMod_Message;
                     buttonTrueContainer.appendChild(buttonTrue);
                     buttonContainer.appendChild(buttonTrueContainer);
                 }
-                message.appendChild(buttonContainer);
+                messageInner.appendChild(buttonContainer);
             }
+            message.appendChild(messageInner);
             return message;
         }
     };

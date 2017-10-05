@@ -48,7 +48,7 @@ module RockMod_Message {
    }
 
    const html = {
-      element: function (type: string, classes: string, content): any {
+      element: function (type: string, classes: string, content: any): any {
          // Catch
          if (!Rocket.is.string(type)) {
             return false;
@@ -67,6 +67,7 @@ module RockMod_Message {
          container: function () {
             let html = document.createElement('div');
             html.id = 'rocket-message';
+
             return html;
          }
       },
@@ -77,11 +78,14 @@ module RockMod_Message {
          // Container
          let message = html.message.container();
 
+         // Inner
+         let messageInner = html.element('div', 'rm-inner', '');
+
          // Close
          if (Rocket.is.string(options.close) && options.close.length > 0) {
             let messageClose = html.element('a', 'rm-close', options.close);
             Rocket.event.add(messageClose, 'click', closeMessage);
-            message.appendChild(messageClose);
+            messageInner.appendChild(messageClose);
          }
 
          // Type
@@ -94,7 +98,7 @@ module RockMod_Message {
             messageTypeInner.appendChild(messageTypeLine1);
             messageTypeInner.appendChild(messageTypeLine2);
             messageType.appendChild(messageTypeInner);
-            message.appendChild(messageType);
+            messageInner.appendChild(messageType);
          }
 
          // Heading
@@ -102,12 +106,12 @@ module RockMod_Message {
             let messageHeading = html.element('div', 'rm-heading', '');
             let headingH6 = html.element('h6', '', options.heading);
             messageHeading.appendChild(headingH6);
-            message.appendChild(messageHeading);
+            messageInner.appendChild(messageHeading);
          }
 
          // Body
          if (Rocket.is.string(options.body) && options.body.length > 0) {
-            message.appendChild(html.element('div', 'rm-body', options.body));
+            messageInner.appendChild(html.element('div', 'rm-body', options.body));
          }
 
          // Buttons
@@ -129,9 +133,10 @@ module RockMod_Message {
                buttonContainer.appendChild(buttonTrueContainer);
             }
 
-            message.appendChild(buttonContainer);
+            messageInner.appendChild(buttonContainer);
          }
 
+         message.appendChild(messageInner);
          return message;
       }
    }
