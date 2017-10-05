@@ -1,6 +1,6 @@
 {
   "name": "rocket-message",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "description": "A message module.",
   "main": "index.html",
   "repository": {
@@ -26,6 +26,6 @@
     "rocket-propel": "^3.0.3"
   },
   "dependencies": {
-    "rocket-tools": "^1.14.2"
+    "rocket-tools": "^1.15.1"
   }
 }
