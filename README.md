@@ -1,3 +1,5 @@
+**NO LONGER SUPPORTED**
+
 # Rocket Message
 A message module.
 
@@ -119,7 +121,6 @@ The original library, Messageplate, has been deprecated. The entire Webplate pro
 ## Author
 Created and maintained by Chris Humboldt<br>
 Website: <a href="http://chrishumboldt.com/">chrishumboldt.com</a><br>
-Twitter: <a href="https://twitter.com/chrishumboldt">twitter.com/chrishumboldt</a><br>
 GitHub <a href="https://github.com/chrishumboldt">github.com/chrishumboldt</a><br>
 
 ## Copyright and License
